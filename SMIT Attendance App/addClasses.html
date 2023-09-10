@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Class Management</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>Admin Class Management</h2>
+        <hr />
+        <br />
+        <div class="form">
+            Class Timings: <input type="text" name="classTimings" id="classTimings" /><br /><br />
+            Schedule of Classes: <input type="text" name="scheduleOfClasses" id="scheduleOfClasses" /><br /><br />
+            Teacher's Name: <input type="text" name="teacherName" id="teacherName" /><br /><br />
+            Section Name: <input type="text" name="sectionName" id="sectionName" /><br /><br />
+            Course Name: <input type="text" name="courseName" id="courseName" /><br /><br />
+            Batch Number: <input type="text" name="batchNumber" id="batchNumber" /><br /><br />
+            <!-- <button id="publish_btn" >Add Class</button> -->
+        </div>
+        
+
+        <div class="buttons">
+            <button id="create" onclick="addClass()">Create</button>
+            <button id="read" onclick="readForm();">Read</button>
+            <button id="update">Update</button>
+            <button id="delete">Delete</button>
+        </div>
+        
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase.js"></script>
+
+    <script type="module" src="./js/config.js"></script>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Class Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Class Management</h1>
+        <form id="class-form">
+            <label for="class-timings">Class Timings:</label>
+            <input type="text" id="class-timings" required><br><br>
+
+            <label for="schedule">Schedule of Classes:</label>
+            <input type="text" id="schedule" required><br><br>
+
+            <label for="teacher-name">Teacher's Name:</label>
+            <input type="text" id="teacher-name" required><br><br>
+
+            <label for="section-name">Section Name:</label>
+            <input type="text" id="section-name" required><br><br>
+
+            <label for="course-name">Course Name:</label>
+            <input type="text" id="course-name" required><br><br>
+
+            <label for="batch-number">Batch Number:</label>
+            <input type="text" id="batch-number" required><br><br>
+
+            <button type="button" id="add-class" class="btn">Add Class</button>
+        </form>
+
+        <h2>Class List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Class Timings</th>
+                    <th>Schedule of Classes</th>
+                    <th>Teacher's Name</th>
+                    <th>Section Name</th>
+                    <th>Course Name</th>
+                    <th>Batch Number</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="class-list">
+                <!-- Class details will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const classForm = document.getElementById('class-form');
+        const classList = document.getElementById('class-list');
+
+        classForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+
+        document.getElementById('add-class').addEventListener('click', function () {
+            const classTimings = document.getElementById('class-timings').value;
+            const schedule = document.getElementById('schedule').value;
+            const teacherName = document.getElementById('teacher-name').value;
+            const sectionName = document.getElementById('section-name').value;
+            const courseName = document.getElementById('course-name').value;
+            const batchNumber = document.getElementById('batch-number').value;
+
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${classTimings}</td>
+                <td>${schedule}</td>
+                <td>${teacherName}</td>
+                <td>${sectionName}</td>
+                <td>${courseName}</td>
+                <td>${batchNumber}</td>
+                <td><button class="delete-btn">Delete</button></td>
+            `;
+
+            classList.appendChild(newRow);
+
+            // Clear the form fields
+            classForm.reset();
+        });
+
+        classList.addEventListener('click', function (e) {
+            if (e.target.classList.contains('delete-btn')) {
+                e.target.closest('tr').remove();
+            }
+        });
+    </script>
+</body>
+</html>

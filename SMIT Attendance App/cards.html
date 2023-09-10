@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/cards.css">
+    <title>Attendence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"/>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
+  
+        <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
+          <span class="material-icons">menu</span>
+        </button>
+        <h1 class="navbar-title"><img src="./assets/smit logo.png" alt="SMIT LOGO"></h1>
+        <nav class="navbar-menu">
+          <a href="addClasses.html" >Class Details</a>
+          <a href="studentDetails.html">Student Details</a>
+          <a href="#" class="active">Attendence</a>
+          <a href="#" id="logout-btn" onclick="logout();">Sign Out</a>
+        </nav>
+      </nav>
+    <!-- navbar ends -->
+
+    <!-- Popup Card -->
+    <!-- Dropdown for selecting class names -->
+<label for="classSelect">Select Class:</label>
+<select id="classSelect">
+  <option value="Miss Hina">Miss Hina</option>
+  <option value="Miss Iqra">Miss Iqra</option>
+  <option value="Sir Ameen">Sir Ameen</option>
+</select>
+
+<!-- Button to trigger the pop-up -->
+<button id="openPopup">Take Attendance</button>
+
+<!-- Hidden pop-up card container -->
+<div id="attendancePopup" class="popup">
+  <div class="popup-content">
+    <h2>Take Attendance</h2>
+    <label for="studentID">Student ID:</label>
+    <input type="text" id="studentID" />
+    <label for="attendance">Attendance:</label>
+    <select id="attendance">
+      <option value="present">Present</option>
+      <option value="absent">Absent</option>
+      <option value="leave">Leave</option>
+      <option value="late">Late</option>
+    </select>
+    <!-- Display student data here -->
+    <div id="studentInfo">
+      <!-- Student data goes here -->
+    </div>
+    <button id="submitAttendance">Submit</button>
+    <button id="closePopup">Close</button>
+  </div>
+</div>
+
+   
+    <script defer src="./js/navbar.js"></script>
+    <script defer src="./js/cards.js"></script>
+</body>
+</html>

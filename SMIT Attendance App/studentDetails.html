@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/classes.css">
+    <title>Admin Student Management</title>
+    
+</head>
+<body>
+    <div class="container">
+    <h1>Admin Student Management</h1>
+    <div>
+        <h2>Add Student</h2>
+        <form id="student-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br><br>
+
+            <label for="father-name">Father's Name:</label>
+            <input type="text" id="father-name" required><br><br>
+
+            <label for="roll-number">Roll Number:</label>
+            <input type="text" id="roll-number" required><br><br>
+
+            <label for="contact-number">Contact Number:</label>
+            <input type="text" id="contact-number" required><br><br>
+
+            <label for="cnic-number">CNIC Number:</label>
+            <input type="text" id="cnic-number" required><br><br>
+
+            <label for="picture">Picture:</label>
+            <input type="file" id="picture" accept="image/*"><br><br>
+
+            <label for="course-name">Course Name:</label>
+            <input type="text" id="course-name" required><br><br>
+
+            <label for="assigned-class">Assigned Class:</label>
+            <input type="text" id="assigned-class" required><br><br>
+
+            <button type="button" id="add-student" class="btn">Add Student</button>
+        </form>
+    </div>
+
+
+    <div>
+        <h2>Student List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Father's Name</th>
+                    <th>Roll No</th>
+                    <th>Contact No</th>
+                    <th>CNIC No</th>
+                    <th>Course Name</th>
+                    <th>Assigned Class</th>
+                    <th>Picture</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="student-list">
+                <!-- Class details will be inserted here -->
+            </tbody>
+        </table>
+        <!-- <ul id="student-list">
+             Student details will be inserted here 
+        </ul> -->
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase.js"></script>
+
+<script type="module" src="./js/config.js"></script>
+
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Admin pages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"/>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
+  
+        <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
+          <span class="material-icons">menu</span>
+        </button>
+        <h1 class="navbar-title"><img src="./assets/smit logo.png" alt="SMIT LOGO"></h1>
+        <nav class="navbar-menu">
+          <a href="#" class="active">Class Details</a>
+          <a href="studentDetails.html">Student Details</a>
+          <a href="#">Attendence</a>
+          <a href="#" id="logout-btn" onclick="logout();">Sign Out</a>
+        </nav>
+      </nav>
+    <!-- navbar ends -->
+    <div class="link-container">
+        <a href="addClasses.html" class="link">Classes Details</a>
+        <a href="studentDetails.html" class="link">Students Details</a>
+        <a href="cards.html" class="link">Student Attendence Details</a>
+    </div>
+
+    <script defer src="./js/navbar.js"></script>
+    <script defer src="./js/app.js"></script>
+</body>
+</html>

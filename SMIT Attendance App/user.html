@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>User pages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"/>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
+  
+        <button type="button" class="navbar-burger" onclick="toggleMenuOpen()">
+          <span class="material-icons">menu</span>
+        </button>
+        <h1 class="navbar-title"><img src="./assets/smit logo.png" alt="SMIT LOGO"></h1>
+        <nav class="navbar-menu">
+            <p id="username"></p>
+          <a href="#" id="logout-btn" onclick="logout();">Sign Out</a>
+        </nav>
+      </nav>
+    <!-- navbar ends -->
+    <!-- Add an input field for ID and a dropdown for attendance -->
+<label for="userID">User ID:</label>
+<input type="text" id="userID" />
+<label for="attendance">Attendance:</label>
+<select id="attendance">
+  <option value="absent">Absent</option>
+  <option value="present">Present</option>
+  <option value="leave">Leave</option>
+  <option value="late">Late</option>
+</select>
+<button id="markAttendance">Mark Attendance</button>
+
+    <script defer src="./js/navbar.js"></script>
+    <script defer src="./js/app.js"></script>
+    <script src="./js/user.js"></script>
+</body>
+</html>
